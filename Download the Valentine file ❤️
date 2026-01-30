@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Para Ti ❤️ Shukurah</title>
+<style>
+body{
+    margin:0;
+    overflow:hidden;
+    background:radial-gradient(circle at top,#ff6f91,#590d22);
+    height:100vh;
+    font-family:Arial, sans-serif;
+}
+.center{
+    position:absolute;
+    top:38%;
+    width:100%;
+    text-align:center;
+    color:white;
+    text-shadow:0 0 15px #ffb3c6;
+}
+.center h1{font-size:3.2rem;margin:0;}
+.center p{font-size:1.4rem;margin-top:10px;}
+
+.heart{
+    position:absolute;
+    width:18px;height:18px;
+    background:#ff1e56;
+    transform:rotate(45deg);
+    animation:shoot 4s linear infinite;
+}
+.heart:before,.heart:after{
+    content:'';
+    position:absolute;
+    width:18px;height:18px;
+    background:#ff1e56;
+    border-radius:50%;
+}
+.heart:before{top:-9px;left:0;}
+.heart:after{left:-9px;top:0;}
+
+@keyframes shoot{
+    from{transform:translateY(0) rotate(45deg);opacity:1;}
+    to{transform:translateY(-900px) rotate(45deg);opacity:0;}
+}
+</style>
+</head>
+<body>
+
+<div class="center">
+  <h1>Shukurah ❤️</h1>
+  <p>
+    Happy Valentine’s Day my love 💕<br>
+    You make my world brighter, my heart softer,<br>
+    and my smile real. Every beat of my heart<br>
+    chooses you — today and always 🌹
+  </p>
+</div>
+
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4f9a2a6a4a.mp3?filename=romantic-ambient-111547.mp3">
+</audio>
+
+<script>
+function heart(){
+  const h=document.createElement('div');
+  h.className='heart';
+  h.style.left=Math.random()*innerWidth+'px';
+  h.style.animationDuration=(3+Math.random()*2)+'s';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),5000);
+}
+setInterval(heart,150);
+</script>
+
+</body>
+</html>
